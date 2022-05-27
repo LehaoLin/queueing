@@ -261,7 +261,7 @@ export default {
     },
     
     user_generate(){
-        var next_user_frame = Math.round(this.exp_gen(0.1) * 0.1) * (1 / this.coming_rate)
+        var next_user_frame = Math.round(this.exp_gen(0.1)) * (1 / this.coming_rate)
 
         var exp_gen_result = []
         for (let i=0; i < 10; i++){
