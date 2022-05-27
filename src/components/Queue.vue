@@ -1,4 +1,6 @@
 <template>
+<p>Coming rate</p>
+<input v-model="coming_rate">
 <button @click="start_()">Start/Stop</button>
 <div style="display: flex; flex: 2 2 0%; flex-flow: row wrap; justify-content: space-around;">
     <div>
@@ -79,6 +81,7 @@ export default {
   },
   data(){
     return {
+        coming_rate: 1,
         user_num: 0,
         user_downloading_bt_num: 0,
         user_downloading_ipfs_num: 0,
@@ -258,7 +261,7 @@ export default {
     },
     
     user_generate(){
-        var next_user_frame = Math.round(this.exp_gen(0.1) * 0.1)
+        var next_user_frame = Math.round(this.exp_gen(0.1) * 0.1) * (1 / this.coming_rate)
 
         var exp_gen_result = []
         for (let i=0; i < 10; i++){
